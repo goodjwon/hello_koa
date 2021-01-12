@@ -3,6 +3,10 @@ const Router = require('koa-router');
 
 const app = new Koa();
 const router = new Router();
+const api = require('./api');
+
+
+router.use('/api', api.routes());
 
 router.get('/', (ctx, next)=>{
     ctx.body = 'home';
